@@ -25,10 +25,12 @@ export class BaseRecord implements BaseEntity {
             this.idBase = uuid();
         }
 
-        await pool.execute("INSERT INTO `bases`(`idBase`, `name`, `price`) VALUES(:idBase, :name, :price)", {
+        await pool.execute("INSERT INTO `bases`(`idBase`, `name`, `price`, `count`, `seedId`) VALUES(:idBase, :name, :price, :count, :seedId)", {
             idBase: this.idBase,
             name: this.name,
             price: this.price,
+            count: this.count,
+            seedId: this.seedId,
         });
 
         return this.idBase;
@@ -55,9 +57,10 @@ export class BaseRecord implements BaseEntity {
         });
     }
 
-    async delete(): Promise<void> {
+    async delete(idBase: string): Promise<void> {
         await pool.execute("DELETE FROM `bases` WHERE `idBase` = :idBase", {
             idBase: this.idBase,
         })
     }
 }
+
