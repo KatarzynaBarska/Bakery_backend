@@ -26,7 +26,7 @@ baseRouter
 
     })
 
-.patch('/base/:idBase', async (req,res) => {
+.patch('/:idBase', async (req,res) => {
     const {body}: {
         body: BaseEntity;
     } = req;
