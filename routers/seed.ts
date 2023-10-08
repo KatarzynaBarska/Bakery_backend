@@ -1,6 +1,6 @@
 import {Router} from "express";
-import {SeedRecord} from "../records/seed.record";
 import {ValidationError} from "../utils/errors";
+import {SeedRecord} from "../records/seed.record";
 
 export const seedRouter = Router();
 

@@ -20,7 +20,7 @@ app.use(rateLimit({
 }));
 
 app.use('/base', baseRouter);
-app.use('/seed', seedRouter);
+app.use('/', seedRouter);
 
 
 app.use(handleError);
