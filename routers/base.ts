@@ -1,7 +1,7 @@
 import {Request, Response, Router} from "express";
 import {BaseRecord} from "../records/base.record";
 import {SeedRecord} from "../records/seed.record";
-import {BaseEntity} from "../types";
+import { ListBasesRes, SetSeedForBaseReq} from "../types";
 import {ValidationError} from "../utils/errors";
 
 export const baseRouter = Router();
@@ -15,7 +15,7 @@ baseRouter
         res.json({
             basesList,
             seedsList,
-        })
+        } as ListBasesRes);
     })
 
     .post('/', async (req: Request, res: Response) => {
@@ -26,19 +26,19 @@ baseRouter
 
     })
 
-.patch('/:idBase', async (req,res) => {
+.patch('/seed/:idBase', async (req,res) => {
     const {body}: {
-        body: BaseEntity;
+        body: SetSeedForBaseReq;
     } = req;
 
 //nie jestem pewna czy taścieżka /base/:idBase jest poprawna
-    const base = await BaseRecord.getOne(req.params.idBase);
+    const base = await BaseRecord.getOne(req.params.idBase); // wczytaj jesną bazę chleba
 
     if (base === null) {
         throw new ValidationError('The base of bread you are looking for does not exist.');
     }
 
-    const seed = body.seedId === '' ? null : await SeedRecord.getOne(body.seedId);
+    const seed = body.seedId === '' ? null : await SeedRecord.getOne(body.seedId); // wczytaj jeden dodatek
 
     if (seed === null) {
         throw new ValidationError('Such an addition to bread does not exist.');
