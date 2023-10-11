@@ -10,11 +10,13 @@ export class SeedRecord implements SeedEntity {
     idSeed?: string;
     name: string;
     price: number;
+    count: number;
 
     constructor(obj: SeedEntity) {
         this.idSeed = obj.idSeed;
         this.name = obj.name;
         this.price = obj.price;
+        this.count = obj.count;
     }
 
     async insert(): Promise<string> {
@@ -47,6 +49,13 @@ export class SeedRecord implements SeedEntity {
         await pool.execute("DELETE FROM `seeds` WHERE `idSeed` = :idSeed, ", {
             idSeed: this.idSeed,
         })
+    }
+
+    async countGivenSeeds(): Promise<number> {
+        const [[{count}]] = await pool.execute("SELECT COUNT(*) AS `count` FROM `bases` WHERE `seedId` = :idSeed ", {
+            idSeed: this.idSeed,
+        }) as SeedRecordResults;
+        return count;
     }
 }
 
