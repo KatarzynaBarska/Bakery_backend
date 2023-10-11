@@ -1,6 +1,7 @@
 import {Router} from "express";
 import {ValidationError} from "../utils/errors";
 import {SeedRecord} from "../records/seed.record";
+import {GetSingleSeedRes, SeedEntity} from "../types";
 
 export const seedRouter = Router();
 
@@ -16,13 +17,15 @@ seedRouter
 
     .get('/:seedId', async (req, res) => {
         const seed = await SeedRecord.getOne(req.params.seedId);
+        const amountOfSeeds = await seed.countGivenSeeds();
+
         res.json({
             seed,
-        })
+        }as GetSingleSeedRes);
     })
 
     .post('/', async (req, res) => {
-        const newSeed = new SeedRecord(req.body);
+        const newSeed = new SeedRecord(req.body as SeedEntity);
         await newSeed.insert();
 
         res.json(newSeed);
