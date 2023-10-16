@@ -10,7 +10,7 @@ seedRouter
     .get('/', async (req, res) => {
         const seedsList = await SeedRecord.listAll();
 
-        res.json({
+        res.json({ //zwracamy czyste dane
             seedsList,
         });
     })

@@ -10,3 +10,7 @@ export interface ListBasesRes {
 export interface SetSeedForBaseReq {
     seedId: string;
 }
+
+export interface GetSingleBaseRes {
+    base: BaseEntity;
+}

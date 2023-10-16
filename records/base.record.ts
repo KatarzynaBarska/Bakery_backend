@@ -62,5 +62,12 @@ export class BaseRecord implements BaseEntity {
             idBase: this.idBase,
         })
     }
+
+    async countGivenBases(): Promise<number> {
+        const [[{count}]] = await pool.execute("SELECT COUNT(*) AS `count` FROM `bases` WHERE `idBase` = :idBase ", {
+            idBase: this.idBase,
+        }) as BaseRecordResults;
+        return count;
+    }
 }
 

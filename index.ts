@@ -20,7 +20,7 @@ app.use(rateLimit({
 }));
 
 app.use('/base', baseRouter);
-app.use('/', seedRouter);
+app.use('/', seedRouter); //localhost:3001 wyświetla listę dodatków.
 
 
 app.use(handleError);
