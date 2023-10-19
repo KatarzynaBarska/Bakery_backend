@@ -50,10 +50,11 @@ export class BaseRecord implements BaseEntity {
     }
 
     async update(): Promise<void> {
-        await pool.execute("UPDATE `bases` SET `name` = :name, `seedId` = :seedId WHERE `idBase` = :idBase", {
+        await pool.execute("UPDATE `bases` SET `name` = :name, `seedId` = :seedId, `count` = :count WHERE `idBase` = :idBase", {
             idBase: this.idBase,
             name: this.name,
             seedId: this.seedId,
+            count: this.count,
         });
     }
 
