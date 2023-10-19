@@ -2,7 +2,6 @@ import {v4 as uuid} from 'uuid';
 import {SeedEntity} from '../types';
 import {pool} from "../utils/db";
 import {FieldPacket} from "mysql2";
-import {BaseRecord} from "./base.record";
 
 type SeedRecordResults = [SeedRecord[], FieldPacket[]];
 
