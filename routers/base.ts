@@ -59,7 +59,32 @@ baseRouter
 
     res.json(base);
 
-});
+})
+
+    .patch('/base/:idBase', async (req, res) => {
+        const {body}: {
+            body: {
+                newCount: number;
+            };
+        } = req;
+
+
+        const base = await SeedRecord.getOne(req.params.idBase); // get one seed
+
+        if (base === null) {
+            throw new ValidationError('The base witch you are looking for does not exist.');
+        }
+        base.count = body.newCount;
+
+        try {
+            await base.update();
+            res.json(base);
+        } catch (error) {
+            console.error('Error while updating the base record:', error);
+            throw error;
+        }
+    });
+
 
 
 
