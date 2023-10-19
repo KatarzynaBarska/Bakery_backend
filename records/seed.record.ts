@@ -24,10 +24,11 @@ export class SeedRecord implements SeedEntity {
             this.idSeed = uuid();
         }
 
-        await pool.execute("INSERT INTO `seeds`(`idSeed`,`name`,`price`) VALUES(:idSeed, :name, :price)", {
+        await pool.execute("INSERT INTO `seeds`(`idSeed`,`name`,`price`, `count`) VALUES(:idSeed, :name, :price, :count)", {
             idSeed: this.idSeed,
             name: this.name,
             price: this.price,
+            count: this.count,
         });
 
         return this.idSeed;
@@ -45,10 +46,22 @@ export class SeedRecord implements SeedEntity {
         return result.length === 0 ? null : new SeedRecord(result[0]);
     }
 
-    async delete(): Promise<void> {
-        await pool.execute("DELETE FROM `seeds` WHERE `idSeed` = :idSeed, ", {
+    // Add update method
+    async update(): Promise<void> {
+        if (typeof this.count !== 'undefined') {
+        await pool.execute("UPDATE `seeds` SET `count` = :count  WHERE `idSeed` = :idSeed", {
             idSeed: this.idSeed,
-        })
+            count: this.count,
+        });
+            } else {
+            console.error('Count is undefined. Cannot update record.')
+        }
+    }
+
+    async delete(): Promise<void> {
+        await pool.execute("DELETE FROM `seeds` WHERE `idSeed` = :idSeed ", {
+            idSeed: this.idSeed,
+        });
     }
 
     async countGivenSeeds(): Promise<number> {
