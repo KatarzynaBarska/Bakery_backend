@@ -24,7 +24,7 @@ baseRouter
 
         res.json({
             base,
-        }as GetSingleBaseRes);
+        } as GetSingleBaseRes);
     })
 
     .post('/', async (req: Request, res: Response) => {
@@ -35,31 +35,31 @@ baseRouter
 
     })
 
-.patch('/seed/:idBase', async (req,res) => {
-    const {body}: {
-        body: SetSeedForBaseReq;
-    } = req;
+    .patch('/seed/:idBase', async (req, res) => {
+        const {body}: {
+            body: SetSeedForBaseReq;
+        } = req;
 
-//nie jestem pewna czy taścieżka /base/:idBase jest poprawna
-    const base = await BaseRecord.getOne(req.params.idBase); // wczytaj jedną bazę chleba
+//I am not sure this path /base/:idBase is correct
+        const base = await BaseRecord.getOne(req.params.idBase); // get one base
 
-    if (base === null) {
-        throw new ValidationError('The base of bread you are looking for does not exist.');
-    }
+        if (base === null) {
+            throw new ValidationError('The base of bread you are looking for does not exist.');
+        }
 
-    const seed = body.seedId === '' ? null : await SeedRecord.getOne(body.seedId); // wczytaj jeden dodatek
+        const seed = body.seedId === '' ? null : await SeedRecord.getOne(body.seedId); // get one seed
 
-    if (seed === null) {
-        throw new ValidationError('Such an addition to bread does not exist.');
-    }
+        if (seed === null) {
+            throw new ValidationError('Such an addition to bread does not exist.');
+        }
 
-    base.seedId = seed?.idSeed ?? null;
+        base.seedId = seed?.idSeed ?? null;
 
-    await base.update();
+        await base.update();
 
-    res.json(base);
+        res.json(base);
 
-})
+    })
 
     .patch('/base/:idBase', async (req, res) => {
         const {body}: {

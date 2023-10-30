@@ -48,11 +48,11 @@ export class SeedRecord implements SeedEntity {
     // Add update method
     async update(): Promise<void> {
         if (typeof this.count !== 'undefined') {
-        await pool.execute("UPDATE `seeds` SET `count` = :count  WHERE `idSeed` = :idSeed", {
-            idSeed: this.idSeed,
-            count: this.count,
-        });
-            } else {
+            await pool.execute("UPDATE `seeds` SET `count` = :count  WHERE `idSeed` = :idSeed", {
+                idSeed: this.idSeed,
+                count: this.count,
+            });
+        } else {
             console.error('Count is undefined. Cannot update record.')
         }
     }

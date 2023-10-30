@@ -10,7 +10,7 @@ seedRouter
     .get('/', async (req, res) => {
         const seedsList = await SeedRecord.listAll();
 
-        res.json({ // get back clear data
+        res.json({ // get clear data
             seedsList,
         });
     })
@@ -26,7 +26,7 @@ seedRouter
 
 
     .delete('/:idSeed', async (req, res) => {
-        const seed = await SeedRecord.getOne(req.params.idSeed); // get one record
+        const seed = await SeedRecord.getOne(req.params.idSeed); // get one SeedRecord
 
         if (!seed) {
             throw new ValidationError('There is no such addition to bread.');
@@ -42,7 +42,7 @@ seedRouter
 
         res.json(newSeed);
     })
-    // Add patch
+
 
     .patch('/:idSeed', async (req, res) => {
         const {body}: {

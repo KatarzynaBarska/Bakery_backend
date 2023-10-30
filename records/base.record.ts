@@ -43,7 +43,7 @@ export class BaseRecord implements BaseEntity {
     }
 
     static async getOne(idBase: string): Promise<BaseRecord | null> {
-        const [results] = ( await pool.execute("SELECT * FROM `bases` WHERE `idBase` = :idBase", {
+        const [results] = (await pool.execute("SELECT * FROM `bases` WHERE `idBase` = :idBase", {
             idBase,
         })) as BaseRecordResults;
         return results.length === 0 ? null : new BaseRecord(results[0]);
