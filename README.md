@@ -3,7 +3,7 @@
 
 # WIRTUALNA PIEKARNIA
 
-See the live version of [Project Name](https://devmentor.pl).
+Zobacz projekt [Virtual Bakery](https://devmentor.pl).
 
 Aplikacja webowa, mająca na celu zademonstrowanie moich umiejętności pisania kodu.
 Umożliwia zamawianie świeżego pieczywa oraz daty dostawy.
@@ -14,12 +14,7 @@ Umożliwia zamawianie świeżego pieczywa oraz daty dostawy.
 - wybór daty
 
 
-&nbsp;
-<<<<<<< HEAD
 
-=======
-
->>>>>>> origin/main
 ## 💡 Technologie
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -30,107 +25,24 @@ Umożliwia zamawianie świeżego pieczywa oraz daty dostawy.
 
 
 &nbsp;
-<<<<<<< HEAD
-
-=======
-
->>>>>>> origin/main
-## 🔗 See also
-
-Are you interested in **techonologyName** and **technologyName**? See my other project [Interesting Project Name](https://devmentor.pl/podcast).
-
-&nbsp;
-<<<<<<< HEAD
-
-=======
-
->>>>>>> origin/main
-## 💿 Installation
-
-The project uses [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). Having them installed, type into the terminal: `npm i`.
 
 
-&nbsp;
-<<<<<<< HEAD
+## 💿 Instalacja
 
-=======
-
->>>>>>> origin/main
-## 🤔 Solutions provided in the project
-
-- one
-
-<<<<<<< HEAD
-&nbsp;
-=======
-&nbsp;
->>>>>>> origin/main
-
-- two:
-```
-some example code
-
-more code :)
-```
-<<<<<<< HEAD
-&nbsp;
-=======
-&nbsp;
->>>>>>> origin/main
-
-- three
-
-| Issue                     | Solution                       |     |
-| ------------------------- | -----------------------------  | --- |
-| one                       | `short code example`           |     |
-| two                       | `short code example`           |     |
-| thre                      | `short code example`           |     |
-
-<<<<<<< HEAD
-&nbsp;
-
-- four - some shortcut <kbd>Ctrl</kbd> + <kbd>C</kbd>
-
-&nbsp;
-
-- five - example with a screenshot
-  <img alt='what it is' src="https://via.placeholder.com/500x200" />
-  =======
-  &nbsp;
-
-- four - some shortcut <kbd>Ctrl</kbd> + <kbd>C</kbd>
-
-&nbsp;
-
-- five - example with a screenshot
-  <img alt='what it is' src="https://via.placeholder.com/500x200" />
->>>>>>> origin/main
+Projekt używa  [node](https://nodejs.org/en/) oraz [npm](https://www.npmjs.com/). Aby zainstalować wpisz w terminal: `npm i`.
 
 
 &nbsp;
 
-## 💭 Conclusions for future projects
 
-I would like to improve...
+## 💭 Plany na przyszłość
 
-#### This is the first issue:
-```
-and this is a code example
-```
-
-#### This is the second issue:
-```
-and this is a code example
-```
-
+Chciałabym dodać do bazy danych tabelę z klijentami oraz dostawcami.
 
 &nbsp;
 
-## 🙋‍♂️ Feel free to contact me
-Write sth nice ;) Find me on...
+## 🙋‍♂️ Zapraszam do kontaktu 
+Mój email [Katarzyna Barske](katarzynabarska58@gmail.com)
 
 
-&nbsp;
 
-## 👏 Thanks / Special thanks / Credits
-Thanks to my [Mentor - devmentor.pl](https://devmentor.pl/) – for providing me with this task and for code review.
