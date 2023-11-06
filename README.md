@@ -42,7 +42,7 @@ Chciałabym dodać do bazy danych tabelę z klientami oraz dostawcami.
 &nbsp;
 
 ## 🙋‍♂️ Zapraszam do kontaktu 
-Mój email [Katarzyna Barske](katarzynabarska58@gmail.com)
+Mój email: katarzynabarska58@gmail.com
 
 
 
