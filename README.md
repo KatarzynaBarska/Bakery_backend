@@ -37,7 +37,11 @@ Projekt używa  [node](https://nodejs.org/en/) oraz [npm](https://www.npmjs.com/
 
 ## 💭 Plany na przyszłość
 
-Chciałabym dodać do bazy danych tabelę z klientami oraz dostawcami.
+- Rozbudować bazę danych
+- Dodać tabelę dla klientów
+- Dodać tabelę dla dostawców
+- Dodać panel administratora
+- Bezpieczne szyfrowanie haseł
 
 &nbsp;
 
