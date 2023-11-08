@@ -45,7 +45,7 @@ Projekt używa  [node](https://nodejs.org/en/) oraz [npm](https://www.npmjs.com/
 
 &nbsp;
 
-## 🙋‍♂️ Zapraszam do kontaktu 
+## 🙋‍♂️ Zapraszam do kontaktu
 Mój email: katarzynabarska58@gmail.com
 
 

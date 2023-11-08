@@ -43,17 +43,18 @@ export class BaseRecord implements BaseEntity {
     }
 
     static async getOne(idBase: string): Promise<BaseRecord | null> {
-        const [results] = await pool.execute("SELECT * FROM `bases` WHERE `idBase` = :idBase", {
+        const [results] = (await pool.execute("SELECT * FROM `bases` WHERE `idBase` = :idBase", {
             idBase,
-        }) as BaseRecordResults;
+        })) as BaseRecordResults;
         return results.length === 0 ? null : new BaseRecord(results[0]);
     }
 
     async update(): Promise<void> {
-        await pool.execute("UPDATE `bases` SET `name` = :name, `seedId` = :seedId WHERE `idBase` = :idBase", {
+        await pool.execute("UPDATE `bases` SET `name` = :name, `seedId` = :seedId, `count` = :count WHERE `idBase` = :idBase", {
             idBase: this.idBase,
             name: this.name,
             seedId: this.seedId,
+            count: this.count,
         });
     }
 
@@ -61,6 +62,13 @@ export class BaseRecord implements BaseEntity {
         await pool.execute("DELETE FROM `bases` WHERE `idBase` = :idBase", {
             idBase: this.idBase,
         })
+    }
+
+    async countGivenBases(): Promise<number> {
+        const [[{count}]] = await pool.execute("SELECT COUNT(*) AS `count` FROM `bases` WHERE `idBase` = :idBase ", {
+            idBase: this.idBase,
+        }) as BaseRecordResults;
+        return count;
     }
 }
 

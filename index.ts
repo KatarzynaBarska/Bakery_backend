@@ -20,7 +20,7 @@ app.use(rateLimit({
 }));
 
 app.use('/base', baseRouter);
-app.use('/', seedRouter);
+app.use('/', seedRouter); //localhost:3001 shows list of seeds
 
 
 app.use(handleError);
