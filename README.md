@@ -3,7 +3,7 @@
 
 # WIRTUALNA PIEKARNIA
 
-
+Zobacz projekt [Virtual Bakery](https://youtu.be/kGKepKRuDWk).
 
 Aplikacja webowa, mająca na celu zademonstrowanie moich umiejętności pisania kodu.
 Umożliwia zamawianie świeżego pieczywa oraz daty dostawy.
