@@ -23,7 +23,7 @@ const router = Router();
 
 
 router.use('/base', baseRouter);
-app.use('/', seedRouter); //localhost:3001 shows list of seeds
+router.use('/', seedRouter); //localhost:3001 shows list of seeds
 
 app.use('/api', router);
 
