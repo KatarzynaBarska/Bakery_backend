@@ -1,5 +1,5 @@
 import cors from 'cors';
-import express, {json} from 'express';
+import express, {json, Router} from 'express';
 import {config} from "./config/config";
 import rateLimit from 'express-rate-limit';
 import {handleError} from "./utils/errors";
@@ -19,8 +19,13 @@ app.use(rateLimit({
     limit: 100,
 }));
 
-app.use('/base', baseRouter);
-app.use('/', seedRouter); //localhost:3001 shows list of seeds
+const router = Router();
+
+
+router.use('/base', baseRouter);
+router.use('/', seedRouter); //localhost:3001 shows list of seeds
+
+app.use('/api', router);
 
 
 app.use(handleError);
