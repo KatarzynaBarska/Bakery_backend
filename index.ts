@@ -19,13 +19,9 @@ app.use(rateLimit({
     limit: 100,
 }));
 
-const router = Router();
 
-
-router.use('/base', baseRouter);
-router.use('/', seedRouter); //localhost:3001 shows list of seeds
-
-app.use('/api', router);
+app.use('/base', baseRouter);
+app.use('/', seedRouter); //localhost:3001 shows list of seeds
 
 
 app.use(handleError);
