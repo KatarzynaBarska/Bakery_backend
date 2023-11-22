@@ -11,7 +11,9 @@ Umożliwia zamawianie świeżego pieczywa oraz daty dostawy.
 **Właściwości**:
 - wybór pieczywa
 - wybór ilości
-- wybór daty
+- wybór daty dostawy
+- kalendarz
+- galeria 
 
 
 
